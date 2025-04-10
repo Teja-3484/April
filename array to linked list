@@ -1,0 +1,21 @@
+class Node:
+    def __init__(self,data):
+        self.val=data
+        self.next=None
+def printList(head):
+    temp=head
+    while(temp):
+        print(temp.val)
+        temp=temp.next
+def CreateList(arr):
+    head=None
+    for i in arr:
+        if head==None:
+            head=Node(i)
+            temp=head
+        else:
+            temp.next=Node(i)
+            temp=temp.next
+    printList(head)
+arr=list(map(int,input().split()))
+CreateList(arr)
