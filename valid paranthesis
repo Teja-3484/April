@@ -1,0 +1,15 @@
+class Solution(object):
+    def isValid(self, s):
+        a=[]
+        for i in s:
+            if i in "[({":
+                 a.append(i)
+            else:
+                if len(a)==0:
+                    return False
+                x=a.pop()
+                if x=="{" and i=="}" or x=="[" and i=="]" or x=="(" and i==")":
+                    continue
+                else:
+                    return False
+        return len(a)==0
